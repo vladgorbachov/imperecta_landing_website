@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Globals moved from app/globals.css */
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 31, 41, 55;
+  --background-end-rgb: 31, 41, 55;
+}
+
+/* Hide scrollbar but keep scrolling (apply to both html and body) */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Chrome, Safari and Opera */
+html::-webkit-scrollbar, body::-webkit-scrollbar { display: none; }
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  :root {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 241 245 249;
+    --card-foreground: 31 41 55;
+    --popover: 255 255 255;
+    --popover-foreground: 31 41 55;
+    --primary: 31 41 55;
+    --primary-foreground: 255 255 255;
+    --secondary: 107 114 128;
+    --secondary-foreground: 255 255 255;
+    --muted: 241 245 249;
+    --muted-foreground: 31 41 55;
+    --accent: 139 92 246;
+    --accent-foreground: 255 255 255;
+    --destructive: 229 62 62;
+    --destructive-foreground: 255 255 255;
+    --border: 107 114 128;
+    --input: 255 255 255;
+    --ring: 139 92 246;
+    --chart-1: 139 92 246;
+    --chart-2: 5 150 105;
+    --chart-3: 8 145 178;
+    --chart-4: 245 158 11;
+    --chart-5: 229 62 62;
+    --radius: 0.5rem;
+    --sidebar: 15 23 42;
+    --sidebar-foreground: 248 250 252;
+    --sidebar-primary: 107 114 128;
+    --sidebar-primary-foreground: 255 255 255;
+    --sidebar-accent: 139 92 246;
+    --sidebar-accent-foreground: 255 255 255;
+    --sidebar-border: 107 114 128;
+    --sidebar-ring: 139 92 246;
+  }
+
+  .dark {
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+    --primary: 255 255 255;
+    --primary-foreground: 31 41 55;
+    --secondary: 51 65 85;
+    --secondary-foreground: 203 213 225;
+    --muted: 107 114 128;
+    --muted-foreground: 255 255 255;
+    --accent: 139 92 246;
+    --accent-foreground: 255 255 255;
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+    --border: 71 85 105;
+    --input: 107 114 128;
+    --ring: 139 92 246;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body { @apply bg-background text-foreground; }
+}
+
+.font-geist { font-family: var(--font-geist-sans, "GeistSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif); }
+
+p[style*="--selection-text-color"]::selection { color: var(--selection-text-color); background-color: var(--selection-background-color); }
+p[style*="--selection-text-color"]::-moz-selection { color: var(--selection-text-color); background-color: var(--selection-background-color); }
+.heading-with-selection::selection { color: #ffffff; background-color: #8b5cf6; }
+.heading-with-selection::-moz-selection { color: #ffffff; background-color: #8b5cf6; }
+.logo-text::selection { color: #ffffff; background-color: #8b5cf6; }
+.logo-text::-moz-selection { color: #ffffff; background-color: #8b5cf6; }
+.gradient-container { position: relative; border-radius: 16px; overflow: hidden; }
+.gradient-imperecta { background: linear-gradient(135deg, #1f2937 0%, #8b5cf6 50%, #6b7280 100%); }
+.gradient-imperecta-subtle { background: linear-gradient(90deg, #374151 0%, #8b5cf6 50%, #4b5563 100%); }
+/* Make background videos visible over page background */
+.video-background { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.video-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.85); z-index: 0; }
+.hero-text { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.rounded-all-devices { border-radius: 16px !important; -webkit-border-radius: 16px !important; overflow: hidden; }

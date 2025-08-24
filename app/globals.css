@@ -1,0 +1,199 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 31, 41, 55;
+  --background-end-rgb: 31, 41, 55;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  :root {
+    /* Updated design tokens for Imperecta branding */
+    --background: 15 23 42; /* Primary dark background */
+    --foreground: 248 250 252; /* Text color */
+
+    --card: 241 245 249; /* Card background */
+    --card-foreground: 31 41 55; /* Card text color */
+
+    --popover: 255 255 255; /* Popover background */
+    --popover-foreground: 31 41 55; /* Popover text color */
+
+    --primary: 31 41 55; /* Primary color for backgrounds */
+    --primary-foreground: 255 255 255; /* Text color for primary elements */
+
+    --secondary: 107 114 128; /* Secondary text color */
+    --secondary-foreground: 255 255 255; /* Text color for secondary elements */
+
+    --muted: 241 245 249; /* Muted background */
+    --muted-foreground: 31 41 55; /* Muted text color */
+
+    --accent: 139 92 246; /* Accent color for CTAs */
+    --accent-foreground: 255 255 255; /* Text color for accent elements */
+
+    --destructive: 229 62 62; /* Color for destructive actions */
+    --destructive-foreground: 255 255 255; /* Text color for destructive actions */
+
+    --border: 107 114 128; /* Border color */
+    --input: 255 255 255; /* Input field background */
+    --ring: 139 92 246; /* Ring color for focus states */
+
+    --chart-1: 139 92 246; /* Color for charts */
+    --chart-2: 5 150 105; /* Secondary color for charts */
+    --chart-3: 8 145 178; /* Tertiary color for charts */
+    --chart-4: 245 158 11; /* Fourth color for charts */
+    --chart-5: 229 62 62; /* Fifth color for charts */
+
+    --radius: 0.5rem; /* Corner rounding */
+
+    --sidebar: 15 23 42; /* Sidebar background */
+    --sidebar-foreground: 248 250 252; /* Sidebar text color */
+    --sidebar-primary: 107 114 128; /* Sidebar primary color */
+    --sidebar-primary-foreground: 255 255 255; /* Primary text in sidebar */
+    --sidebar-accent: 139 92 246; /* Sidebar accent color */
+    --sidebar-accent-foreground: 255 255 255; /* Text color for sidebar accents */
+    --sidebar-border: 107 114 128; /* Sidebar border color */
+    --sidebar-ring: 139 92 246; /* Sidebar focus ring color */
+  }
+
+  .dark {
+    /* Updated dark theme tokens for consistency */
+    --background: 15 23 42;
+    --foreground: 248 250 252;
+
+    --card: 30 41 59;
+    --card-foreground: 248 250 252;
+
+    --popover: 30 41 59;
+    --popover-foreground: 248 250 252;
+
+    --primary: 255 255 255;
+    --primary-foreground: 31 41 55;
+
+    --secondary: 51 65 85;
+    --secondary-foreground: 203 213 225;
+
+    --muted: 107 114 128;
+    --muted-foreground: 255 255 255;
+
+    --accent: 139 92 246;
+    --accent-foreground: 255 255 255;
+
+    --destructive: 239 68 68;
+    --destructive-foreground: 248 250 252;
+
+    --border: 71 85 105;
+    --input: 107 114 128;
+    --ring: 139 92 246;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.font-geist {
+  font-family: var(--font-geist-sans, "GeistSans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif);
+}
+
+/* Custom selection styles */
+p[style*="--selection-text-color"]::selection {
+  color: var(--selection-text-color);
+  background-color: var(--selection-background-color);
+}
+
+p[style*="--selection-text-color"]::-moz-selection {
+  color: var(--selection-text-color);
+  background-color: var(--selection-background-color);
+}
+
+/* Heading selection styles */
+.heading-with-selection::selection {
+  color: #ffffff;
+  background-color: #8b5cf6;
+}
+
+.heading-with-selection::-moz-selection {
+  color: #ffffff;
+  background-color: #8b5cf6;
+}
+
+/* Logo text selection styles */
+.logo-text::selection {
+  color: #ffffff;
+  background-color: #8b5cf6;
+}
+
+.logo-text::-moz-selection {
+  color: #ffffff;
+  background-color: #8b5cf6;
+}
+
+/* Updated gradient styles for Imperecta branding */
+.gradient-container {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.gradient-imperecta {
+  background: linear-gradient(135deg, #1f2937 0%, #8b5cf6 50%, #6b7280 100%);
+}
+
+.gradient-imperecta-subtle {
+  background: linear-gradient(90deg, #374151 0%, #8b5cf6 50%, #4b5563 100%);
+}
+
+/* Updated video background styles for better text readability */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.85); /* Darker overlay for better text contrast */
+  z-index: -1;
+}
+
+/* Added text shadow for better readability over video */
+.hero-text {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Add this to ensure rounded corners on all devices */
+.rounded-all-devices {
+  border-radius: 16px !important;
+  -webkit-border-radius: 16px !important;
+  overflow: hidden;
+}
