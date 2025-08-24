@@ -9,6 +9,10 @@ import { ArrowRight, CheckCircle, Star } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { useEffect, useRef, useState } from 'react'
+import { Routes, Route } from 'react-router-dom'
+import FeaturesPage from '@/pages/FeaturesPage'
+import PricingPage from '@/pages/PricingPage'
+import AboutPage from '@/pages/AboutPage'
 
 export default function App() {
   const [isVideoPlaying] = useState(true)
@@ -91,6 +95,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-50 font-geist">
       <Navbar />
+      <Routes>
+        <Route path="/features" element={<FeaturesPage />} />
+        <Route path="/pricing" element={<PricingPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/" element={
+          <>
 
       {/* Hero video only */}
       <section className="relative h-screen overflow-hidden pt-16">
@@ -112,7 +122,7 @@ export default function App() {
       <StatsSection />
 
       {/* Tech */}
-      <section className="py-24 bg-slate-800">
+      <section className="py-24 bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Built with modern technology</h2>
@@ -192,7 +202,10 @@ export default function App() {
         </div>
       </section>
 
-      <ContactSection />
+              <ContactSection />
+          </>
+        } />
+      </Routes>
     </div>
   )
 }

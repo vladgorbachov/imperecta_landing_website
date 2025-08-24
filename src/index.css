@@ -106,3 +106,35 @@ p[style*="--selection-text-color"]::-moz-selection { color: var(--selection-text
 .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
 .rounded-all-devices { border-radius: 16px !important; -webkit-border-radius: 16px !important; overflow: hidden; }
+
+/* Section background helpers using existing assets in /public */
+.section-bg-1 {
+  background-image: url('/abstract-geometric-shapes.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-bg-2 {
+  background-image: url('/abstract-gradient.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Background for Seamless integrations section */
+.section-bg-integrations {
+  background-image: url('/Seamless%20integrations.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Background for "Trusted by teams" and "Meet the team" sections */
+.section-bg-trusted-team {
+  /* Try raw path first, then encoded fallback */
+  background-image: url('/Trusted by teams & Meet the team.png'), url('/Trusted%20by%20teams%20%26%20Meet%20the%20team.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

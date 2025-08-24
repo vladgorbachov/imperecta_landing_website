@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Mail, Phone, MapPin, Send, ExternalLink } from "lucide-react"
+import { Mail, Phone, Globe, Send, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export default function ContactSection() {
@@ -38,19 +38,19 @@ export default function ContactSection() {
     {
       icon: Mail,
       title: "Email",
-      value: "contact@imperecta.com",
-      link: "mailto:contact@imperecta.com"
+      value: "info@delionsoft.com",
+      link: "mailto:info@delionsoft.com"
     },
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
-      link: "tel:+15551234567"
+      value: "+373 765 41 890 ",
+      link: "tel:+373 765 41 890 "
     },
     {
-      icon: MapPin,
-      title: "Office",
-      value: "DeLion Software, Global",
+      icon: Globe,
+      title: "Website",
+      value: "DeLion Software S.R.L",
       link: "https://www.delionsoft.com"
     }
   ]
@@ -61,7 +61,7 @@ export default function ContactSection() {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Get in touch</h2>
           <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            Ready to transform your project management? Let's discuss how Imperecta can help your team succeed.
+            Let's discuss how Imperecta can help your business tosucceed.
           </p>
         </div>
 
@@ -91,26 +91,7 @@ export default function ContactSection() {
               ))}
             </div>
 
-            <div className="mt-12">
-              <h4 className="text-white font-semibold mb-4">Business Hours</h4>
-              <div className="space-y-2 text-slate-300">
-                <p>Monday - Friday: 9:00 AM - 6:00 PM EST</p>
-                <p>Saturday: 10:00 AM - 2:00 PM EST</p>
-                <p>Sunday: Closed</p>
-              </div>
-            </div>
-
-            <div className="mt-8">
-              <a 
-                href="https://www.delionsoft.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 text-violet-400 hover:text-violet-300 transition-colors"
-              >
-                <span>Visit DeLion Software</span>
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </div>
+                        
           </div>
 
           {/* Contact Form */}
@@ -191,9 +172,7 @@ export default function ContactSection() {
             </form>
 
             <div className="mt-6 text-center">
-              <p className="text-slate-400 text-sm">
-                We typically respond within 24 hours during business days.
-              </p>
+              
             </div>
           </div>
         </div>
